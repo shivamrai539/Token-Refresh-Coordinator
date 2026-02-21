@@ -25,14 +25,15 @@ const AppContent = () => {
     { path: "/", element: <Home /> },
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup /> },
-    {
-      path: "/admin",
-      element: (
-        <ProtectedRoute role="Admin">
-          <AdminDashboard />
-        </ProtectedRoute>
-      )
-    },
+    
+    // {
+    //   path: "/admin",
+    //   element: (
+    //     <ProtectedRoute role="Admin">
+    //       <AdminDashboard />
+    //     </ProtectedRoute>
+    //   )
+    // },
     {
       path: "/dashboard",
       element: (

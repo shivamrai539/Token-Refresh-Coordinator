@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AutheImage from "../assets/Auth-Ē.png";
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
           to="/"
           className="text-2xl font-bold text-white"
         >
-          LOGIN
+          <img src={AutheImage} alt="Authē Logo" className="h-8 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
@@ -37,7 +38,7 @@ const Navbar = () => {
 
           <Link
             to="/signup"
-            className="px-5 py-2.5 rounded bg-white text-black font-medium hover:opacity-90 hover:font-bold duration0-30 cursor-pointer "
+            className="px-5 py-2.5 rounded bg-white text-black font-medium hover:opacity-90 hover:font-bold duration-300 cursor-pointer "
           >
             Get Started
           </Link>

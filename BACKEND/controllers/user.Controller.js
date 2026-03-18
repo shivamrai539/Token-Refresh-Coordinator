@@ -67,3 +67,16 @@ export const getUserInfo = async(req, res) => {
         user : req.user
     })
 }
+
+export const getAllUsersController = async (req, res) => {
+    try {
+        if (req.user.role !== 'Admin') {
+            return res.status(403).json({ error: "Access denied. Admins only." });
+        }
+        const users = await userModel.find({});
+        res.status(200).json({ users });
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({ error: "Failed to fetch users" });
+    }
+}

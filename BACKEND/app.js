@@ -5,7 +5,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/user.routes.js'
 
-connect()  // connecting database.
+connect()  
 
 const app = express();
 

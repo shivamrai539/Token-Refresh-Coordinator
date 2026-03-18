@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';       // password security library convert password into hashed string.
+import bcrypt from 'bcrypt';       
 import jwt from 'jsonwebtoken';
  
 const userSchema = new mongoose.Schema({
@@ -22,12 +22,17 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        select: false,      // jab user data fetch karo → password automatically nahi aayega
+        select: false,
+    },
+    role: {
+        type: String,
+        enum: ['User', 'Admin'],
+        default: 'User'
     }
 })
 
 userSchema.statics.hashPassword = async function (password){
-    return await bcrypt.hash(password, 10);      // plain password converted into irreversible hashed version before storing it in the database. 
+    return await bcrypt.hash(password, 10);      
 }
 
 userSchema.methods.isValidPassword = async function (password){

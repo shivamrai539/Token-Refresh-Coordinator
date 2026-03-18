@@ -1,4 +1,4 @@
-// home, login , sighnup, dashboard(show all details).
+
 
 
 
@@ -22,6 +22,6 @@ router.post('/login',
 )
 
 router.get('/dashboard', authentication.authUser ,userController.getUserInfo)
-
+router.get('/all-users', authentication.authUser, userController.getAllUsersController)
 
 export default router;
